@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/login/link/page.jsx", "app/reset-passw/page.jsx", "app/layout.jsx", "app/page.jsx",  ],
-  "exclude": ["node_modules","app/save-product/page.jsx", "app/products/product/[id]/page.jsx", "app/products/product/[id]/page.jsx", "app/products/edit/[id]/page.jsx", "app/notes/page.jsx", "app/products/page.jsx","app/products/simple-slider/page.jsx", "app/login/page.jsx" ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/login/link/page.jsx", "app/reset-passw/page.jsx", "app/layout.jsx", "app/page.jsx", "components/AuthButton.jsx", "components/Code.jsx", "components/Loader.jsx", "components/Step.jsx", "app/auth/callback/route.js", "app/actions/authUtils.js", "app/actions/getUserSession.js", "app/actions/read-product.js", "app/actions/search.js", "app/actions/searchByCategorie.js", "app/actions/send-product.js", "app/actions/setChangePassword.js",  "app/save-product/page.jsx", "app/products/product/[id]/page.jsx", "app/products/product/[id]/page.jsx", "app/products/edit/[id]/page.jsx", "app/notes/page.jsx", "app/products/page.jsx","app/products/simple-slider/page.jsx", "app/login/page.jsx" ],
+  "exclude": ["node_modules",]
 }
