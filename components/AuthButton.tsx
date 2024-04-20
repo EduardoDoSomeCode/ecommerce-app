@@ -20,6 +20,11 @@ export default async function AuthButton() {
     return redirect("/login");
   };
 
+  const redirectToPassword = async () => {
+    "use server"
+
+    return redirect("/reset-passw")
+  }
   return user ? (
     <div className="flex items-center gap-4">
       Hey, {user.email}!
@@ -28,6 +33,13 @@ export default async function AuthButton() {
           Logout
         </button>
       </form>
+
+      <form action={redirectToPassword}>
+        <button className="border border-foreground/20 rounded-md px-4 py-2 text-foreground mb-2">
+          Recuperar contraseña
+        </button>
+      </form>
+
     </div>
   ) : (
     <Link

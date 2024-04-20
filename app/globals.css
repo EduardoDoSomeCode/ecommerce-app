@@ -8,6 +8,8 @@
     --btn-background: 200 10% 91%;
     --btn-background-hover: 200 10% 89%;
     --foreground: 200 50% 3%;
+    --primary: rgb(43, 20, 66);
+    --secondary: rgb(104, 132, 185);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -16,7 +18,10 @@
       --btn-background: 200 10% 9%;
       --btn-background-hover: 200 10% 12%;
       --foreground: 200 20% 96%;
+      --primary: rgb(43, 20, 66);
+      --secondary: rgb(104, 132, 185);
     }
+
   }
 }
 
@@ -25,6 +30,30 @@
     @apply border-foreground/20;
   }
 }
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar {
+  width: 15px;
+  border-radius: 10px;
+
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 14px;
+  border: 3px solid var(--primary);
+}
+
 
 .animate-in {
   animation: animateIn 0.3s ease 0.15s both;

@@ -1,56 +1,58 @@
+"use client"
 import Link from "next/link";
-import { headers, cookies } from "next/headers";
-import { createClient } from "@/utils/supabase/server";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { signUp,signIn } from "../actions/authUtils";
 
-export default function Login({
+ function Login({
   searchParams,
 }: {
   searchParams: { message: string };
 }) {
-  const signIn = async (formData: FormData) => {
-    "use server";
 
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
-    const cookieStore = cookies();
-    const supabase = createClient(cookieStore);
+  // const signIn = async (formData: FormData) => {
+  //   "use server";
 
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+  //   const email = formData.get("email") as string;
+  //   const password = formData.get("password") as string;
+  //   const cookieStore = cookies();
+  //   const supabase = createClient(cookieStore);
 
-    if (error) {
-      return redirect("/login?message=Could not authenticate user");
-    }
+  //   const { error } = await supabase.auth.signInWithPassword({
+  //     email,
+  //     password,
+  //   });
 
-    return redirect("/");
-  };
+  //   if (error) {
+  //     return redirect("/login?message=Could not authenticate user");
+  //   }
 
-  const signUp = async (formData: FormData) => {
-    "use server";
+  //   return redirect("/");
+  // };
 
-    const origin = headers().get("origin");
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
-    const cookieStore = cookies();
-    const supabase = createClient(cookieStore);
+  // const signUp = async (formData: FormData) => {
+  //   "use server";
 
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: `${origin}/auth/callback`,
-      },
-    });
+  //   const origin = headers().get("origin");
+  //   const email = formData.get("email") as string;
+  //   const password = formData.get("password") as string;
+  //   const cookieStore = cookies();
+  //   const supabase = createClient(cookieStore);
 
-    if (error) {
-      return redirect("/login?message=Could not authenticate user");
-    }
+  //   const { error } = await supabase.auth.signUp({
+  //     email,
+  //     password,
+  //     options: {
+  //       emailRedirectTo: `${origin}/auth/callback`,
+  //     },
+  //   });
 
-    return redirect("/login?message=Check email to continue sign in process");
-  };
+  //   if (error) {
+  //     return redirect("/login?message=Could not authenticate user");
+  //   }
+
+  //   return redirect("/login?message=Check email to continue sign in process");
+  // };
+const router = useRouter()
 
   return (
     <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
@@ -107,12 +109,26 @@ export default function Login({
         >
           Sign Up
         </button>
+
         {searchParams?.message && (
           <p className="mt-4 p-4 bg-foreground/10 text-foreground text-center">
             {searchParams.message}
           </p>
         )}
+
+
       </form>
+
+
+      
+      <button onClick={()=>{router.push("/login/link")}}  className="border border-foreground/20 rounded-md px-4 py-2 text-foreground mb-2">
+          Aceso Rapido
+
+        </button>
+
+      
     </div>
   );
 }
+
+export default Login;
