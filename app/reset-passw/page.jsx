@@ -11,7 +11,7 @@ function RessetPass() {
     const [sucessMessage, setSuccesMessage] = useState(false)
 
 
-    const validatePassword = async (event: any) => {
+    const validatePassword = async (event) => {
         event.preventDefault()
         if (password !== secondPasword) {
             return setTextWarning("La contraseña no coincide con la confirmacion")

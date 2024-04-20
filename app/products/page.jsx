@@ -9,7 +9,7 @@ import SimpleSlider from "./simple-slider/page"
 const Producst = () => {
     const supabase = createClient()
 
-    const [products, setProducts] = useState<any>([])
+    const [products, setProducts] = useState([])
     const [searchProductValue, setSearchProductValue] = useState("")
 
     const sendSerachProduct = () => {
@@ -47,13 +47,13 @@ const Producst = () => {
     return (
         <div className=" flex flex-col justify-center content-center items-center ">
 
-            <input onChange={(e: any) => { setSearchProductValue(e.target.value) }} type="text" className="mt-4 mb-2 w-2/4 rounded-lg p-1 text-black" />
+            <input onChange={(e) => { setSearchProductValue(e.target.value) }} type="text" className="mt-4 mb-2 w-2/4 rounded-lg p-1 text-black" />
             <button onClick={sendSerachProduct}   className="bg-slate-600 p-2 mb-2 rounded-md hover:bg-slate-800 hover:text-white transition">Enviar</button>
            
            
             <SimpleSlider widthCarrousel={300} heightCarrousel={400} items={products}/>
            
-            {products.map((item: any, index: number) => (
+            {products.map((item, index) => (
                 <div className="bg-slate-300 rounded-lg text-black mt-8 p-4 flex  content-center justify-between mb-4 w-2/4 " key={index}>
 
                     <div>

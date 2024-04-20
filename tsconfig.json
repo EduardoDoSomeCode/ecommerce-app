@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/save-product/page.jsx", "app/products/product/[id]/page.jsx", ],
-  "exclude": ["node_modules", "app/products/simple-slider/page.jsx"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/login/link/page.jsx", "app/reset-passw/page.jsx", "app/layout.jsx", "app/page.jsx",  ],
+  "exclude": ["node_modules","app/save-product/page.jsx", "app/products/product/[id]/page.jsx", "app/products/product/[id]/page.jsx", "app/products/edit/[id]/page.jsx", "app/notes/page.jsx", "app/products/page.jsx","app/products/simple-slider/page.jsx", "app/login/page.jsx" ]
 }

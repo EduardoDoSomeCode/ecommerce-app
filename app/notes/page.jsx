@@ -4,7 +4,7 @@ import { createClient } from '@/utils/supabase/client'
 import { useEffect, useState } from 'react'
 
 export default function Page() {
-    const [notes, setNotes] = useState<any[] | null>(null)
+    const [notes, setNotes] = useState(null)
     const[search, setSearch] = useState("")
     const supabase = createClient()
 
@@ -16,14 +16,14 @@ export default function Page() {
         getData()
     }, [])
 
-    const getTextFromInput =(query : any, array:any)=>{
+    const getTextFromInput =(query , array)=>{
         if(!query){return array}
 
-        return array.filter((item:any) => item.title.includes(query))
+        return array.filter((item) => item.title.includes(query))
 
     }
 
-    const getText =(event:any)=>{
+    const getText =(event)=>{
 setSearch(event.target.value)
     }
 
@@ -33,7 +33,7 @@ setSearch(event.target.value)
             <input onChange={getText} placeholder='insertar busqueda' className='p-2 text-black' /> <button className='bg-slate-700 p-2 hover:bg-slate-900'>Submit</button>
         </div>
         <ol >
-            {filterArrayText && filterArrayText?.map((item:any) => (
+            {filterArrayText && filterArrayText?.map((item) => (
                 <li className=" text-black bg-neutral-300 p-6   rounded-md mb-3 hover:bg-slate-500 " key={item.id}>
                     {item.title}
                 </li>

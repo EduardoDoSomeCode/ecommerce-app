@@ -6,13 +6,11 @@ import { redirect } from "next/navigation";
 
  function MagicLink({
   searchParams,
-}: {
-  searchParams: { message: string };
 }) {
-  const signIn = async (formData: FormData) => {
+  const signIn = async (formData) => {
     "use server";
 
-    const email = formData.get("email") as string;
+    const email = formData.get("email");
     const cookieStore = cookies();
     const supabase = createClient(cookieStore);
     const origin = headers().get("origin");

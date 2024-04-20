@@ -15,8 +15,6 @@ export const metadata = {
 
 const RootLayout = async({
   children,
-}: {
-  children: React.ReactNode;
 }) => {
   return (
     <html lang="en" className={GeistSans.className}>

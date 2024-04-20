@@ -1,12 +1,10 @@
 "use client"
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { signUp,signIn } from "../actions/authUtils";
+import { signUp, signIn } from "../actions/authUtils";
 
- function Login({
-  searchParams,
-}: {
-  searchParams: { message: string };
+function Login({
+  searchParams
 }) {
 
   // const signIn = async (formData: FormData) => {
@@ -52,7 +50,7 @@ import { signUp,signIn } from "../actions/authUtils";
 
   //   return redirect("/login?message=Check email to continue sign in process");
   // };
-const router = useRouter()
+  const router = useRouter()
 
   return (
     <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
@@ -120,13 +118,13 @@ const router = useRouter()
       </form>
 
 
-      
-      <button onClick={()=>{router.push("/login/link")}}  className="border border-foreground/20 rounded-md px-4 py-2 text-foreground mb-2">
-          Aceso Rapido
 
-        </button>
+      <button onClick={() => { router.push("/login/link") }} className="border border-foreground/20 rounded-md px-4 py-2 text-foreground mb-2">
+        Aceso Rapido
 
-      
+      </button>
+
+
     </div>
   );
 }

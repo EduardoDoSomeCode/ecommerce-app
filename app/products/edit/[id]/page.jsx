@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import GetUserSession from "@/app/actions/getUserSession";
 
 
-const Editar = ({ params }: any) => {
+const Editar = ({ params }) => {
 
 
 
@@ -39,7 +39,7 @@ const Editar = ({ params }: any) => {
     }
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     setProductData((prevData) => ({ ...prevData, [name]: value }));
   };
@@ -75,7 +75,7 @@ const Editar = ({ params }: any) => {
 
   return (
     <div className="flex justify-center content-center items-center flex-col min-h-screen ">
-      {products.map((item: any, index: number) => (
+      {products.map((item, index) => (
         <div
           className="bg-slate-300 rounded-lg text-black p-8 flex content-center justify-center  "
           key={index}

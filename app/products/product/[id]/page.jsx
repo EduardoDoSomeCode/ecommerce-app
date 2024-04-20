@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import SimpleSlider from "../../simple-slider/page";
 
 
-const Editar = ({ params }: any) => {
+const Editar = ({ params }) => {
 
     const [imageIndex, setImageIndex] = useState(0)
     const images = [
@@ -26,10 +26,10 @@ const Editar = ({ params }: any) => {
 
     const router = useRouter();
 
-    const [products, setProducts] = useState<any>([]);
-    const [productId, setProductId] = useState<number>(params.id);
+    const [products, setProducts] = useState < any > ([]);
+    const [productId, setProductId] = useState < number > (params.id);
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-    const [recomendationData, setRecomendationData] = useState<any>([])
+    const [recomendationData, setRecomendationData] = useState < any > ([])
 
     const [productData, setProductData] = useState({
         name: "",
@@ -41,7 +41,7 @@ const Editar = ({ params }: any) => {
     });
 
 
-    const handleImageClick = (index: any) => {
+    const handleImageClick = (index) => {
         setSelectedImageIndex(index);
     };
 
@@ -81,17 +81,17 @@ const Editar = ({ params }: any) => {
                 setRecomendationData(categoriesData?.data)
 
 
-                try{
+                try {
                     console.log(categoriesData)
 
-                }catch(e){
+                } catch (e) {
                     console.error(e)
                 }
 
             }
 
 
-            
+
 
         };
         getData();
@@ -102,7 +102,7 @@ const Editar = ({ params }: any) => {
 
     return (
         <div className="flex justify-center content-center items-center flex-col min-h-screen ">
-            {products.map((item: any, index: number) => (
+            {products.map((item, index) => (
                 <div
                     className="bg-slate-300 rounded-lg text-black p-8 flex content-center justify-center  "
                     key={index}
@@ -142,7 +142,7 @@ const Editar = ({ params }: any) => {
             <div className="w-auto flex items-center justify-center flex-col">
                 <img className=" object-cover aspect-video w-1/2 " src={productData.gallery[imageIndex]?.original} alt={`Image of ${productData.name}`} />
                 <div className=" flex items-center justify-center  object-cover aspect-video " >
-                    {productData.gallery.map((image: any, index: number) => (
+                    {productData.gallery.map((image, index) => (
                         <img
                             className="object-cover aspect-video w-1/4  "
                             key={index}
@@ -171,31 +171,31 @@ const Editar = ({ params }: any) => {
                     >
                         {/* <p>ID:{params.id}</p> */}
 
-                        {/* <p>{item.name}</p> */}
-                        {/* <p>${item.price}</p> */}
-                        {/* <p> */}
+            {/* <p>{item.name}</p> */}
+            {/* <p>${item.price}</p> */}
+            {/* <p> */}
 
-                            {/* {item.description} */}
+            {/* {item.description} */}
 
-                        {/* </p> */}
-                        {/* <p> */}
-                            {/* {item.categorie} */}
-
-
-                        {/* </p> */}
-                        {/* <img */}
-                            {/* src={item.image} */}
-                            {/* alt={`Image of product ${item.name}`} */}
-                        {/* /> */}
+            {/* </p> */}
+            {/* <p> */}
+            {/* {item.categorie} */}
 
 
+            {/* </p> */}
+            {/* <img */}
+            {/* src={item.image} */}
+            {/* alt={`Image of product ${item.name}`} */}
+            {/* /> */}
 
 
-                    {/* </div> */}
 
-                {/* </div> */}
-            {/* ))} */} 
-            
+
+            {/* </div> */}
+
+            {/* </div> */}
+            {/* ))} */}
+
         </div>
     );
 };
