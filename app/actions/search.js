@@ -3,7 +3,7 @@ import { createClient } from '@/utils/supabase/client'
 
 
 
-const searchProduct = async (search: any) => {
+const searchProduct = async (search) => {
     const supabase = createClient()
 
     const { data, error } = await supabase.from('products').select("*").like("name", `%${search.toLowerCase()}%`);
@@ -13,14 +13,14 @@ const searchProduct = async (search: any) => {
 }
 
 
-const getElementById = async (id: any) => {
+const getElementById = async (id) => {
     const supabase = createClient()
 
     const { data, error } = await supabase.from("products").select("*").eq("id", `${id}`)
     return data
 }
 
-const updateElementById = async (id: any, updatedData: any) => {
+const updateElementById = async (id, updatedData) => {
     const supabase = createClient()
 
     const { data, error } = await supabase

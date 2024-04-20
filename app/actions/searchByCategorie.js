@@ -1,6 +1,6 @@
 import { createClient } from '@/utils/supabase/client'
 
-const SearchByCategorie = async(search:string) => {
+const SearchByCategorie = async(search) => {
     const supabase = createClient()
 
     const { data, error } = await supabase.from('products').select("*").like("categorie", `%${search}%`);

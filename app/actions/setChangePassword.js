@@ -2,7 +2,7 @@
 import { createClient } from "@/utils/supabase/server";
 import { cookies } from "next/headers";
 
-const ResetPassWord = async (newPassword: any) => {
+const ResetPassWord = async (newPassword) => {
 
     const cookieStore = cookies();
     const supabase = createClient(cookieStore);

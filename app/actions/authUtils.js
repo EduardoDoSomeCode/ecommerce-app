@@ -5,10 +5,10 @@ import { headers, cookies } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 
-const signIn = async (formData: FormData) => {
+const signIn = async (formData) => {
 
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
+    const email = formData.get("email") ;
+    const password = formData.get("password");
     const cookieStore = cookies();
     const supabase = createClient(cookieStore);
 
@@ -24,11 +24,11 @@ const signIn = async (formData: FormData) => {
     return redirect("/");
 };
 
-const signUp = async (formData: FormData) => {
+const signUp = async (formData) => {
 
     const origin = headers().get("origin");
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
+    const email = formData.get("email") ;
+    const password = formData.get("password") ;
     const cookieStore = cookies();
     const supabase = createClient(cookieStore);
 

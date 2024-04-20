@@ -4,7 +4,7 @@ import { revalidatePath } from 'next/cache'
 
 const supabase = createClient()
 
-const sendData = async (formData: FormData) => {
+const sendData = async (formData) => {
     const { name, price, description, categorie, image } = Object.fromEntries(formData.entries());
 
     if (name === null || price === null || description === null || categorie === null || image === null) {
